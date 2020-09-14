@@ -1,0 +1,34 @@
+source "%val{config}/kakboard/kakboard.kak"
+source "%val{config}/smooth-scroll/smooth-scroll.kak"
+# enable plugins on all windows
+hook global WinCreate .* %{ kakboard-enable }
+hook global WinCreate .* %{ hook -once window WinDisplay .* smooth-scroll-enable }
+
+
+set-option global makecmd 'make -j23'
+set-option global grepcmd 'rg --column'
+set-option global ui_options terminal_status_on_top=true
+
+add-highlighter global/ show-matching
+
+hook global WinCreate ^[^*]+$ %{ add-highlighter window/ number-lines -hlcursor }
+#hook global WinCreate ^[^*]+$ %{ add-highlighter window/ number-lines -relative }
+
+# use j-j as a esc alternative 
+hook global InsertChar j %{ try %{
+      exec -draft hH <a-k>jj<ret> d
+        exec <esc>
+}}
+
+map global normal '#' :comment-line<ret>
+
+colorscheme desertex
+#colorscheme snow-light
+
+
+## yank text to both register and clipboard
+#hook global NormalKey y|d|c %{ nop %sh{
+#  printf %s "$kak_main_reg_dquote" | xsel --input --clipboard
+#}}
+
+

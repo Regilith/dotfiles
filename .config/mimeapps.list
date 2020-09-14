@@ -1,0 +1,30 @@
+[Added Associations]
+application/octet-stream=firefox-nightly.desktop;
+application/x-trash=nvim.desktop;
+image/jpeg=qView.desktop;
+image/png=qView.desktop;
+image/svg=qView.desktop;
+image/svg+xml=qView.desktop;
+text/markdown=kak.desktop;
+x-scheme-handler/http=firefox-nightly.desktop;
+x-scheme-handler/https=firefox-nightly.desktop;
+[Default Applications]
+image/jpeg=qView.desktop;
+image/png=qView.desktop;
+image/svg+xml=qView.desktop;
+text/html=firefox-nightly.desktop;
+#text/markdown=kak.desktop;
+#text/plain=kak.desktop;
+text/markdown=micro.desktop;
+text/plain=micro.desktop;
+x-scheme-handler/about=firefox-nightly.desktop;
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
+x-scheme-handler/http=firefox-nightly.desktop;
+x-scheme-handler/https=firefox-nightly.desktop;
+x-scheme-handler/unknown=firefox-nightly.desktop;
+application/pdf=org.pwmt.zathura.desktop;com.github.johnfactotum.Foliate.desktop;
+application/epub+zip=com.github.johnfactotum.Foliate.desktop;
+application/x-mobipocket-ebook=com.github.johnfactotum.Foliate.desktop;
+application/vnd.amazon.ebook=com.github.johnfactotum.Foliate.desktop;
+inode/directory=nnn.desktop
+

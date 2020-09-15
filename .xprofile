@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# sourced at boot by ~/.xinitrc and most display managers
+
+XDG_CONFIG_HOME="$HOME/.config"
+export XDG_CONFIG_HOME
+
+[ "$PATH" == *"$HOME/bin"* ] || PATH="$HOME/bin:$PATH"
+
+#/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+/usr/lib/mate-polkit/polkit-mate-authentication-agent-1 &
+#gnome-keyring-daemon --start --components=pkcs11 &
+#ksuperkey -e 'Super_L=Alt_L|F1' &
+#ksuperkey -e 'Super_R=Alt_L|F1' &
+xset dpms 600 900 1200 #standby, suspend, off
+xset r rate 300 60 #autorepeat, 350 delay, 60 rate
+
+export QT_QPA_PLATFORMTHEME="qt5ct"

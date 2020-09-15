@@ -4,9 +4,9 @@ export NNN_SSHFS_OPTS="sshfs -o follow_symlinks"        # make sshfs follow syml
 export NNN_CONTEXT_COLORS="2136"                        # use a different color for each context
 export NNN_TRASH=1                                      # trash (needs trash-cli) instead of delete
 export NNN_ARCHIVE="\\.(7z|a|ace|alz|arc|arj|bz|bz2|cab|cpio|deb|gz|jar|lha|lz|lzh|lzma|lzo|rar|rpm|rz|t7z|tar|tbz|tbz2|tgz|tlz|txz|tZ|tzo|war|xpi|xz|Z|zip)$"
-#export NNN_OPENER=/home/varafel/.config/nnn/plugins/nuke
+export NNN_OPENER=/home/varafel/.config/nnn/plugins/nuke
 #export NNN_FIFO=/tmp/nnn.fifo
-export NNN_PLUG='d:dragdrop;'
+export NNN_PLUG='d:dragdrop;n:nuke;'
 export NNN_OPTS="EH"
 
 # cd on quit

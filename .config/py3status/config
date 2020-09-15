@@ -53,9 +53,7 @@ clock {
 sysdata {
   cache_timeout = 1
   thresholds = [(0, 'good'), (60, 'degraded'), (80, 'bad')]
-  #thresholds += { 'mem': [(0, 'good'), (60, 'degraded'), (80, 'bad')] }
-  format = '[\?color=cpu_used_percent CPU: {cpu_temp}°C {cpu_used_percent}%]'
-  #format += ' :│: [\?color=mem_used_percent Mem: {mem_used}/{mem_total} {mem_total_unit}]'
+  format = '[\?color=cpu_used_percent CPU: {cpu_used_percent}%]'
   }
 
 

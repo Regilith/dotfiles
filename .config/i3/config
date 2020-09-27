@@ -48,6 +48,7 @@ exec_always --no-startup-id xrdb -load ~/.Xresources
 exec_always --no-startup-id feh --randomize --bg-fill ~/pictures/backgrounds/*
 exec --no-startup-id unclutter -b
 exec --no-startup-id numlockx
+exec --no-startup-id copyq
 exec --no-startup-id xsettingsd -c ~/.config/.xsettingsd
 exec --no-startup-id pulseaudio --start
 #exec_always --no-startup-id $HOME/.config/polybar/launch.sh
@@ -82,9 +83,11 @@ bindsym $alt+F4 kill
 
 # Screenshot
 #bindsym Print exec --no-startup-id "scrot '%S.png' -e 'mv $f $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png ; feh $$(xdg-user-dir PICTURES)/ArchLabs-%S-$wx$h.png'"
-bindsym Print exec --no-startup-id maim ~/pictures/$(date +%s).png #Desktop
-bindsym $mod+Print --release exec --no-startup-id maim -i ~/pictures/$(date +%s).png #Active window
-bindsym $mod+Shift+Print --release exec --no-startup-id maim -s ~/pictures/$(date +%s).png #Selection
+#bindsym Print exec --no-startup-id maim ~/pictures/$(date +%s).png #Desktop
+#bindsym $mod+Print --release exec --no-startup-id maim -i ~/pictures/$(date +%s).png #Active window
+#bindsym $mod+Shift+Print --release exec --no-startup-id maim -s ~/pictures/$(date +%s).png #Selection
+bindsym Print exec --no-startup-id flameshot gui -p ~/pictures/screenshots
+
 
 # audio
 bindsym XF86AudioPlay        exec --no-startup-id playerctl play-pause
@@ -388,6 +391,7 @@ for_window [class="sigil"] floating enable
 for_window [class="Foliate"] floating enable
 for_window [class="dota2"] fullscreen enable
 for_window [class="tk"] floating enable
+for_window [class="copyq"] floating enable
 
 assign [class="Steam"] 4
 assign [class="TeamSpeak"] 5

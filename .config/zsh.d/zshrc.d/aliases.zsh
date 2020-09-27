@@ -26,9 +26,9 @@ alias irssi='irssi --config ~/.config/irssi/config'
 
 alias cpuspeed='watch -n.1 grep \"cpu MHz\" /proc/cpuinfo'
 
-alias sudo='sudo -E'
+#alias sudo='sudo -E'
 
-alias mirror-update="sudo reflector --verbose -p http -p https -c US -a 24 --score 100 -f 10 --sort rate --save /etc/pacman.d/mirrorlist; rm -f /etc/pacman.d/mirrorlist.pacnew"
+alias mirror-update="reflector --verbose -p http -p https -c US -a 24 --score 100 -f 10 --sort rate --save /etc/pacman.d/mirrorlist; rm -f /etc/pacman.d/mirrorlist.pacnew"
 
 alias usb='cd /media && devmon &'
 

@@ -18,7 +18,7 @@ export VISUAL="micro"
 #export VISUAL="kak"
 export BROWSER="firefox-nightly"
 #export PAGER=less # this breaks the bat
-export TERMINAL='/usr/bin/alacritty'
+export TERMINAL='/usr/bin/kitty'
 export MICRO_TRUECOLOR=1
 #export LS_COLORS="$(vivid generate molokai)"
 
@@ -34,34 +34,12 @@ source $ZDOTDIR/zshrc.d/vimmode.zsh
 source $ZDOTDIR/zshrc.d/history.zsh
 source $ZDOTDIR/zshrc.d/options.zsh
 source $ZDOTDIR/zshrc.d/completions.zsh
-
+source $ZDOTDIR/zshrc.d/fzf.zsh
 
 # zoxide autostart
 unalias zi # zi is an alias used by zinit, unbind it first
 eval "$(zoxide init zsh)"
 
-# fzf config
-# Need to source these fzf scripts after vim mode
-# <CTRL+T> list files+folders in current directory ; <CTRL+R> search history of shell commands ; <ALT+C> fuzzy change directory
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
-# Default command to use when input is tty
-export FZF_DEFAULT_COMMAND="fd --type f --color=always"
-# Using bat as previewer 
-export FZF_CTRL_T_OPTS="--preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-# Changing from ** to ~~ the trigger for autocompletion in shell
-export FZF_COMPLETION_TRIGGER='~~'
-
-# Use fd (https://github.com/sharkdp/fd) instead of the default find
-# command for listing path candidates.
-_fzf_compgen_path() {
-  fd --hidden --follow --exclude ".git" . "$1"
-}
-
-# Use fd to generate the list for directory completion
-_fzf_compgen_dir() {
-  fd --type d --hidden --follow --exclude ".git" . "$1"
-}
 
 # sk invokes filename search,
 # skim invokes file content search
@@ -115,8 +93,10 @@ function tab_list_files
     }
   fi
 }
+
 zle -N tab_list_files
 bindkey '^I' tab_list_files
+
 # uncomment the following line to prefix 'cd ' and './' 
 # when listing dirs and executables respectively
 #export TAB_LIST_FILES_PREFIX
@@ -133,3 +113,4 @@ bindkey '^I' tab_list_files
 
 autoload -Uz compinit
 compinit
+

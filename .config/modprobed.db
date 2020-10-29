@@ -61,6 +61,7 @@ fat
 fb_ddc
 fb_sys_fops
 ff_memless
+fixed_phy
 fuse
 garp
 ghash_clmulni_intel
@@ -136,6 +137,7 @@ mac_hid
 mbcache
 mc
 md4
+mdio_devres
 mei
 mei_hdcp
 mei_me
@@ -154,6 +156,7 @@ nls_utf8
 nvidiafb
 nvme
 nvme_core
+of_mdio
 pinctrl_amd
 pkcs8_key_parser
 poly1305_x86_64

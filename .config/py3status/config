@@ -45,7 +45,7 @@ battery_level {
 
 # Dependencies: python-pytz, python-tzlocal
 clock {
-  format = '{America/Denver}'
+  format = '{America/New_York}'
   format_time = ' %Y-%m-%d %H:%M '
 }
 

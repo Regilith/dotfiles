@@ -13,7 +13,7 @@ set $right l
 
 set $editor /usr/bin/kak
 set $browser /usr/bin/firefox-developer-edition
-set $terminal /usr/bin/alacritty
+set $terminal /usr/bin/kitty
 
 bar {
 	modifier none

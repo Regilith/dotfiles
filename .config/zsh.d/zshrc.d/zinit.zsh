@@ -19,8 +19,6 @@ zinit ice wait'!' lucid
 zinit ice depth=1; zinit light romkatv/powerlevel10k # official startup
 
 
-#zinit light zsh-users/zsh-completions
-
 zinit wait lucid for \
  atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
    zdharma/fast-syntax-highlighting \
@@ -36,13 +34,13 @@ zinit wait lucid for \
 #  atinit"zicompinit; zicdreplay" \
 #      zsh-users/zsh-syntax-highlighting \
 
+#zinit light zsh-users/zsh-completions
+#zinit light zdharma/fast-syntax-highlighting
 #zinit light zsh-users/zsh-autosuggestions
 #zinit light marlonrichert/zsh-autocomplete
-
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # This can be useful when pasting large amount of text in the terminal, to avoid triggering autosuggestion for strings that are too long
-ZSH_AUTOSUGGEST_USE_ASYNC=1
-
 #zinit snippet OMZP::colored-man-pages
 #zinit snippet OMZP::extract
 #zinit snippet OMZP::wd # https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/wd
 
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 # This can be useful when pasting large amount of text in the terminal, to avoid triggering autosuggestion for strings that are too long
+ZSH_AUTOSUGGEST_USE_ASYNC=1
